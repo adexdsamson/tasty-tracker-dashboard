@@ -35,7 +35,7 @@ export const useStore = create<StoreState>((set) => ({
   updatePaymentStatus: (orderId, status) =>
     set((state) => ({
       orders: state.orders.map((order) =>
-        order.id === orderId ? { ...order, paymentStatus } : order
+        order.id === orderId ? { ...order, paymentStatus: status } : order
       ),
     })),
 }));
